@@ -20,7 +20,7 @@ class TaskModel {
   @JsonKey(name: "description", defaultValue: '')
   String description;
   @JsonKey(name: "due")
-  TaskDueModel taskDue;
+  TaskDueModel? taskDue;
   @JsonKey(name: "duration", defaultValue: 0)
   int duration;
   @JsonKey(name: "id", defaultValue: '')
@@ -49,7 +49,7 @@ class TaskModel {
     required this.completed,
     required this.content,
     required this.description,
-    required this.taskDue,
+     this.taskDue,
     required this.duration,
     required this.id,
     required this.labels,

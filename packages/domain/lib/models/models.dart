@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../helpers/date_time_helper.dart';
+import '../common/common.dart';
 import 'base_json.dart';
 
 part 'attachment_model.dart';

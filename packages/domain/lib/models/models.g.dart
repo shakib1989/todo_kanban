@@ -139,7 +139,9 @@ TaskModel _$TaskModelFromJson(Map<String, dynamic> json) => TaskModel(
       completed: json['is_completed'] as bool? ?? false,
       content: json['content'] as String? ?? '',
       description: json['description'] as String? ?? '',
-      taskDue: TaskDueModel.fromJson(json['due'] as Map<String, dynamic>),
+      taskDue: json['due'] == null
+          ? null
+          : TaskDueModel.fromJson(json['due'] as Map<String, dynamic>),
       duration: (json['duration'] as num?)?.toInt() ?? 0,
       id: json['id'] as String? ?? '',
       labels: (json['labels'] as List<dynamic>?)
@@ -163,7 +165,7 @@ Map<String, dynamic> _$TaskModelToJson(TaskModel instance) => <String, dynamic>{
       'is_completed': instance.completed,
       'content': instance.content,
       'description': instance.description,
-      'due': instance.taskDue.toJson(),
+      'due': instance.taskDue?.toJson(),
       'duration': instance.duration,
       'id': instance.id,
       'labels': instance.labels,
