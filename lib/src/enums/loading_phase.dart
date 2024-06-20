@@ -1,0 +1,1 @@
+enum LoadingPhase { initial, loading, success, error}
